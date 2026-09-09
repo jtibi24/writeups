@@ -174,5 +174,5 @@ Nmap done: 1 IP address (1 host up) scanned in 2.25 seconds
 ![root](images/root.png)
 
 - And we are connected.
-- Proof of flag
-![img3](images/img3.png)
+
+[Redacted proof.txt]
