@@ -1,8 +1,24 @@
 
-| Box    | IP Address     | OS    | Difficulty | Status   | Notes                          |
-| ------ | -------------- | ----- | ---------- | -------- | ------------------------------ |
-| ClamAV | 192.168.136.42 | Linux | Easy       | ✅ Rooted | Sendmail/ClamAV vulnerability  |
+| Box    | IP Address     | OS    | Difficulty | Status | Notes                         |
+| ------ | -------------- | ----- | ---------- | ------ | ----------------------------- |
+| ClamAV | 192.168.136.42 | Linux | Easy       | Rooted | Sendmail/ClamAV vulnerability |
+# Vulnerability 
+**Name**: CVE 2007 4560 
+**Versions affected**: clamav-milter < 0.91.2 
+**Note:** Sendmail with clamav-milter < 0.91.2 - Remote Command Execution
+[ExploitDB Here](https://www.exploit-db.com/exploits/4761)
+## Description
+[NIST-CVE-2007-4560](https://nvd.nist.gov/vuln/detail/cve-2007-4560)
+```
+clamav-milter in ClamAV before 0.91.2, when run in black hole mode, allows remote attackers to execute arbitrary commands via shell metacharacters that are used in a certain popen call, involving the "recipient field of sendmail.
+```
 
+### What is clamav-milter
+## Remediation 
+- Upgrade ClamAV to version 0.91.2 or later
+#### If Updating isn't an option
+- Disable `clamav-milter` black hole mode
+- Stop using `clamav-milter` with Sendmail
 
 # Information Gathering
 - First we enumerated with `rustscan` `nmap` and directory scanning tools.
@@ -129,7 +145,7 @@ ORT   STATE SERVICE
 ![img2](images/img2.png)
 
 - the script wants us to include an IP address when we run it
-- After running the script  we notice at the bottom it says something reltaed to port 31337 tcp.. specifically : 
+- After running the script  we notice at the bottom it says something reltaed to **port 31337** tcp.. specifically : 
 ![img4](images/img4.png)
 
 - We use `nmap` again to check the open ports on this server
