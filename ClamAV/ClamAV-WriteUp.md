@@ -130,7 +130,7 @@ ORT   STATE SERVICE
 
 - the script wants us to include an IP address when we run it
 - After running the script  we notice at the bottom it says something reltaed to port 31337 tcp.. specifically : 
-![img3](images/img3.png)
+![img4](images/img4.png)
 
 - We use `nmap` again to check the open ports on this server
 ``` shell
@@ -159,4 +159,4 @@ Nmap done: 1 IP address (1 host up) scanned in 2.25 seconds
 
 - And we are connected.
 - Proof of flag
-![img4](images/img4.png)
+![img3](images/img3.png)
