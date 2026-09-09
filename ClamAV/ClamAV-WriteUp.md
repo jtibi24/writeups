@@ -113,7 +113,7 @@ ORT   STATE SERVICE
 
 # Exploit
 - We see a vulnerability for our sendmail version relating to ClamAV - the name of our box
-- ![[Proving Grounds/ClamAV/Attachments/Report - ClamAV - Proving Grounds.png]]
+- ![CVE-2007](images/cve-2007.png)
 
 ``` shell
 # searchsploit commands
@@ -126,11 +126,11 @@ ORT   STATE SERVICE
 - Now that the epxloit is in our local directory we can use it.
 - `.pl` is a Perl script so we can use `perl` to run it.
 
-![[Proving Grounds/ClamAV/Attachments/Report - ClamAV - Proving Grounds-1.png]]
+![img2](images/img2.png)
 
 - the script wants us to include an IP address when we run it
 - After running the script  we notice at the bottom it says something reltaed to port 31337 tcp.. specifically : 
-![[Proving Grounds/ClamAV/Attachments/Report - ClamAV - Proving Grounds-2.png]]
+![img3](images/img3.png)
 
 - We use `nmap` again to check the open ports on this server
 ``` shell
@@ -155,8 +155,8 @@ Nmap done: 1 IP address (1 host up) scanned in 2.25 seconds
 - Let's try to connect with `nc 192.168.136.42 31337`
 
 
-![[writeups/ClamAV/images/445 SMB exploit-2.png]]
+![root](images/root.png)
 
 - And we are connected.
 - Proof of flag
-![[Proving Grounds/ClamAV/Attachments/Report - ClamAV - Proving Grounds-3.png]]
+![img4](images/img4.png)
