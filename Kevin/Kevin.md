@@ -4,7 +4,7 @@
 
 # Vulnerability 
 **Name**: CVE-2009-3999
-**Versions affected**: HP Power Manager 4.2.10
+**Versions affected**: HP Power Manager versions before 4.2.10
 **Note:** HP Power Manager Buffer Overflow
 [Rapid7](https://www.rapid7.com/db/vulnerabilities/cve-2009-3999/)
 ## Description
