@@ -22,6 +22,8 @@
 #### What I Learned
 
 This exploit helped reinforce the difference between Python strings and byte objects. The error occurred because the script was trying to concatenate str and bytes values, which Python 3 does not allow. Troubleshooting it made me pay closer attention to data types when working with exploit code, especially when handling raw shellcode and network payloads.
+
+
 ----------
 
 # Information Gathering
